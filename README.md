@@ -53,4 +53,4 @@ pip install networkx==2.7.1
 Running the above lines of `pip install` should be sufficient to install all  MMCLKin's required packages (and their dependencies). Specific versions of the packages we tested were listed in `requirements.txt`.
 
 ## Contact
-Please submit GitHub issues or contact Yanan Tian(yanan[at]mpu[dot]edu[dot]mo) for any questions related to the source code.
+Please submit GitHub issues or contact Yanan Tian(yanan@mpu.edu.mo) for any questions related to the source code.
