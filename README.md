@@ -12,7 +12,6 @@ This repository has been tested on **Linux**  operating systems.
 * Torch (version >= 1.12.1)
 * Torchvision (version>=0.13.1)
 * Torchaudio (version>=0.12.1)
-* dgl-cu116
 * matplotlib (version >= 3.7.5)
 * Bio (version >= 1.6.2)
 * scipy (version >= 1.10.1)
@@ -24,6 +23,7 @@ This repository has been tested on **Linux**  operating systems.
 * torch_sparse (version >= 0.6.18)
 * torch_cluster (version >= 1.6.3)
 * torch_spline_conv (version >= 1.2.2)
+* dgl-cu116
 
 ## Installation Guide
 Create a virtual environment to run the code of MMCLKin.<br>
@@ -31,7 +31,7 @@ It is recommended to use conda to manage the virtual environment.The installatio
 Make sure to install torch with the cuda version that fits your device.<br>
 This process usually takes few munites to complete.<br>
 ```
-git clone https://github.com/Yanara_Tian/MMCLKin.git
+git clone https://github.com/Yanara-Tian/MMCLKin.git
 cd MMCLKin
 chmod +x ./setup_MMCLKin.sh
 ./setup_MMCLKin.sh
