@@ -33,7 +33,24 @@ This process usually takes few munites to complete.<br>
 ```
 git clone https://github.com/Yanara-Tian/MMCLKin.git
 cd MMCLKin
-chmod +x ./setup_MMCLKin.sh
-./setup_MMCLKin.sh
-conda activate mmclkin_env
+export PYTHONPATH=$PWD:$PYTHONPATH
 ```
+## Dependencies
+This package is tested with Python 3.8.15 and CUDA 11.0 on Ubuntu 20.04. Run the following to create a conda environment and install the required Python packages (modify `torch+cu11.6` according to your CUDA version). 
+```bash
+conda create -n mmclk python=3.8.15
+conda activate mmclk
+pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
+pip install --pre dgl-cu116 -f https://data.dgl.ai/wheels-test/repo.html
+pip install matplotlib
+pip install rdkit
+pip install scipy
+pip install Bio
+pip install transformers
+pip install pyg_lib torch_geometric torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-1.12.0+cu116.html
+pip install networkx==2.7.1
+```
+Running the above lines of `pip install` should be sufficient to install all  MMCLKin's required packages (and their dependencies). Specific versions of the packages we tested were listed in `requirements.txt`.
+
+## Contact
+Please submit GitHub issues or contact Yanan Tian(yanan[at]mpu[dot]edu[dot]mo) for any questions related to the source code.
