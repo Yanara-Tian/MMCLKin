@@ -76,7 +76,14 @@ python process_pdbbind2020.py
 python train_pdbbind2020.py
 ```
 ## Other usages
-### virtual screening
+### virtual screening on the experimental structure
+```
+examples/virtual_screening_8fo7.ipynb
+```
+### virtual screening on the unresolved crystal structure
+```
+examples/virtual_screening_nuak2.ipynb
+```
 ### fine-tuning and predicion
 
 
