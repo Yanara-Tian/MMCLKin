@@ -35,5 +35,50 @@ pip install networkx==2.7.1
 ```
 Running the above lines of `pip install` should be sufficient to install all  MMCLKin's required packages (and their dependencies). Specific versions of the packages we tested were listed in `requirements.txt`.
 
+## Reproduce Results
+### Kinase-inhibitor binding affinity 
+**[1]** Scoring Directly from the Downloaded Results Files
+**[2]** Download Checkpoints and Dataset
+**[3]** Test MMCLKin
+
+### the selectivity of kinase inhibitors
+**[1]** Scoring Directly from the Downloaded Results Files
+**[2]** Download Checkpoints and Dataset
+**[3]** Test MMCLKin
+
+## Feature extraction, training, and testing pipeline
+
+### 3DKDavis 
+**[1]** Feature extraction, encompassing the biochemical and conformational characteristics of kinase inhibitors, evolutionary information and the intricate spatial structural features of binding pockets and kinase domains.这里，为了更加快速的得到每个复合物体系的特征，我们首先建议您下载我们生成的所有的激酶，所有结合口袋以及所有激酶抑制剂的特征。然后执行以下命令：
+```
+python process_3dkdavis.py
+```
+**[2]** 训练和测试模型在激酶-抑制剂结合亲和力的预测性能，我们提供了三种分割方式，kinase cold-start, drug cold-start and kinase-drug cold-start, such that the model is tested on unseen proteins, unseen drugs or both. To use this option, set the argument --split_method using drug or both for the --split_method method, For example, to test on unseen drugs, run the following script.
+```
+python train_3dkdavis.py
+```
+### 3DKKIBA
+**[1]** Feature extraction, encompassing the biochemical and conformational characteristics of kinase inhibitors, evolutionary information and the intricate spatial structural features of binding pockets and kinase domains.这里，为了更加快速的得到每个复合物体系的特征，我们首先建议您下载我们生成的所有的激酶，所有结合口袋以及所有激酶抑制剂的特征。然后执行以下命令：
+```
+python process_3dkkiba.py
+```
+**[2]** 训练和测试模型在激酶-抑制剂结合亲和力的预测性能，我们提供了三种分割方式，kinase cold-start, drug cold-start and kinase-drug cold-start, such that the model is tested on unseen proteins, unseen drugs or both. To use this option, set the argument --split_method using drug or both for the --split_method method, For example, to test on unseen drugs, run the following script.
+```
+python train_3dkkiba.py
+```
+### PDBBind v2020 and CASF-2016
+**[1]** Feature extraction, encompassing the biochemical and conformational characteristics of kinase inhibitors, evolutionary information and the intricate spatial structural features of binding pockets and kinase domains.这里，为了更加快速的得到每个复合物体系的特征，我们首先建议您下载我们生成的所有的激酶，所有结合口袋以及所有激酶抑制剂的特征。然后执行以下命令：
+```
+python process_pdbbind2020.py
+```
+**[2]** 训练和测试模型在激酶-抑制剂结合亲和力的预测性能，我们提供了三种分割方式，kinase cold-start, drug cold-start and kinase-drug cold-start, such that the model is tested on unseen proteins, unseen drugs or both. To use this option, set the argument --split_method using drug or both for the --split_method method, For example, to test on unseen drugs, run the following script.
+```
+python train_pdbbind2020.py
+```
+## Other usages
+### virtual screening
+### fine-tuning and predicion
+
+
 ## Contact
 Please submit GitHub issues or contact Yanan Tian(yanan.tian@mpu.edu.mo) for any questions related to the source code.
