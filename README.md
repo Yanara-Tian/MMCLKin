@@ -147,7 +147,7 @@ python train_3dkkiba_selectivity.py
 **[1]** Download the PDBBindv2020 dataset and extract its content.
 ```
 wget pdbbind2020/clean_pdbbind2020.tar.gz
-tar zxvf 3dkkiba.tar.gz
+tar zxvf clean_pdbbind2020.tar.gz
 ```
 **[2]** extracting the features of PDBBindv2020 and CASF-2016 datasets.
 ```
