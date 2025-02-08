@@ -43,16 +43,26 @@ Running the above lines of `pip install` should be sufficient to install all  MM
 ### Kinase-inhibitor binding affinity 
 
 #### Predictive performance of kinase-inhibitor binding affinity on the 3DKDavis dataset
-**[1]** Download Checkpoints(~298MB) and Dataset(22G).
-
-**[2]** Test MMCLKin,
+**[1]** Download checkpoints(~298MB) and dataset(15GB), and then extract the dataset.
+```
+wget pkls/3dkdavis_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl
+wget test_datasets/3dkdavis_new_kinase_affinity.tar.gz
+cd test_datasets
+tar zxvf 3dkdavis_new_kinase_affinity.tar.gz
+```
+**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on 3DKDavis dataset. We offer dataset splits based on drug cold-start, kinase cold-start, or kinase-drug cold-start, ensuring that the model is tested on unseen kinases, unseen drugs, or both. To enable this option, set the --label argument to new_kinase, new_drug, or both_new. For example, to test on unseen kinases, run the following script:
 ```
 python test_3dkdavis_affinity.py
 ```
-#### Predictive performance of kinase-inhibitor binding affinity on the 3DKKIBA dataset
-**[1]** Download Checkpoints(~298MB) and Dataset(22G).
-
-**[2]** Test MMCLKin,
+#### Predictive performance of kinase-inhibitor binding affinity on the low sequence similarity dataset of 3DKKIBA
+**[1]** Download checkpoints(~298MB) and dataset(15GB), and then extract the dataset.
+```
+wget pkls/3dkkiba_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl
+wget test_datasets/3dkkiba_new_kinase_affinity.tar.gz
+cd test_datasets
+tar zxvf 3dkkiba_new_kinase_affinity.tar.gz
+```
+**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on low sequence similarity dataset of 3DKDavis. Dataset splits for drug cold-start, kinase cold-start, and kinase-drug cold-start scenarios are provided, ensuring that the model is tested on unseen kinases, unseen drugs, or both. To enable this option, set the --label argument to new_kinase, new_drug, or both_new. For example, to evaluate on unseen kinases, run the following script:
 ```
 python test_3dkkiba_affinity.py
 ```
@@ -60,14 +70,14 @@ python test_3dkkiba_affinity.py
 ### The selectivity of kinase inhibitors
 
 #### Predictive performance of kinase inhibitor selectivity on the 3DKDavis dataset
-**[1]** Download Checkpoints(~298MB) and Dataset(22G).
+**[1]** Download Checkpoints(~298MB) and Dataset(15G).
 
 **[2]** Test MMCLKin,
 ```
 python test_3dkdavis_selectivity.py
 ```
 #### Predictive performance of kinase inhibitor selectivity on the 3DKKIBA dataset
-**[1]** Download Checkpoints(~298MB) and Dataset(22G).
+**[1]** Download Checkpoints(~298MB) and Dataset(6G).
 
 **[2]** Test MMCLKin,
 ```
