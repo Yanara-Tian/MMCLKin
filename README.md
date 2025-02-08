@@ -35,6 +35,7 @@ pip install networkx==2.7.1
 pip install sympy
 pip install scikit-learn
 pip install lifelines
+pip install jupyterlab
 ```
 Running the above lines of `pip install` should be sufficient to install all  MMCLKin's required packages (and their dependencies). Specific versions of the packages we tested were listed in `requirements.txt`.
 
