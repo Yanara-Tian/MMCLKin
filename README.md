@@ -73,9 +73,9 @@ python test_3dkkiba_affinity.py
 **[1]** Download checkpoints(~300MB) and dataset(~15GB), and then extract the dataset.
 ```
 wget pkls/3dkkiba_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl
-wget test_datasets/3dkdavis_new_kinase_selectivity.tar.gz
+wget test_datasets/3dkdavis_new_drug_selectivity.tar.gz
 cd test_datasets
-tar zxvf 3dkdavis_new_kinase_selectivity.tar.gz
+tar zxvf 3dkdavis_new_drug_selectivity.tar.gz
 ```
 **[2]** To ensure comprehensive learning of human kinases, the predictive performance for kinase inhibitor selectivity of MMCLKin was evalueated under the drug cold-start splitting strategy.
 ```
@@ -85,9 +85,9 @@ python test_3dkdavis_selectivity.py
 **[1]** Download checkpoints(~300MB) and dataset(~6.1GB), and then extract the dataset.
 ```
 wget pkls/3dkkiba_selectivity/MMCLKin_DTI_pearson_best.pkl
-wget test_datasets/3dkkiba_new_kinase_selectivity.tar.gz
+wget test_datasets/3dkkiba_new_drug_selectivity.tar.gz
 cd test_datasets
-tar zxvf 3dkkiba_new_kinase_selectivity.tar.gz
+tar zxvf 3dkkiba_new_drug_selectivity.tar.gz
 ```
 **[2]** Test the predictive performance for kinase inhibitor selectivity of MMCLKin on the low sequence similarity dataset of 3DKKIBA.
 ```
@@ -105,22 +105,42 @@ examples/virtual_screening_nuak2.ipynb
 ## Feature extraction, training, and testing pipeline
 
 ### 3DKDavis 
-**[1]** Feature extraction, encompassing the biochemical and conformational characteristics of kinase inhibitors, evolutionary information and the intricate spatial structural features of binding pockets and kinase domains.这里，为了更加快速的得到每个复合物体系的特征，我们首先建议您下载我们生成的所有的激酶，所有结合口袋以及所有激酶抑制剂的特征。然后执行以下命令：
+**[1]** Download the new constructed 3DKDavis dataset and extract its content.
+```
+wget 3dkdavis/3dkdavis.tar.gz
+tar zxvf 3dkdavis.tar.gz
+```
+**[2]** Feature extraction, encompassing the biochemical and conformational characteristics of kinase inhibitors, evolutionary information and the intricate spatial structural features of binding pockets and kinase domains.To expedite feature generation for each complex, we recommend executing the following command, which directly generates complex-level features using our pre-generated feature files for all kinases, binding pockets, and kinase inhibitors:
 ```
 python process_3dkdavis.py
 ```
-**[2]** 训练和测试模型在激酶-抑制剂结合亲和力的预测性能，我们提供了三种分割方式，kinase cold-start, drug cold-start and kinase-drug cold-start, such that the model is tested on unseen proteins, unseen drugs or both. To use this option, set the argument --split_method using drug or both for the --split_method method, For example, to test on unseen drugs, run the following script.
+**[3]** Three splitting strategies (kinase cold-start, drug cold-start and kinase-drug cold-start) remain available for training and evaluating the predictive performance of MMCLKin on kinase-inhibitor binding affinity. For example, to train and test on unseen kinases, run the following script:
 ```
 python train_3dkdavis.py
 ```
-### 3DKKIBA
-**[1]** Feature extraction, encompassing the biochemical and conformational characteristics of kinase inhibitors, evolutionary information and the intricate spatial structural features of binding pockets and kinase domains.这里，为了更加快速的得到每个复合物体系的特征，我们首先建议您下载我们生成的所有的激酶，所有结合口袋以及所有激酶抑制剂的特征。然后执行以下命令：
+For the selectivity of kinase inhibitors, only the drug cold-start splitting method is provided，execute the following command:
 ```
+python train_3dkdavis_selectivity.py
+```
+### 3DKKIBA
+**[1]** Download the new constructed low sequence similarity dataset of 3DKDavis and extract its content.
+```
+wget 3dkkiba/30sm_kiba_gra_seq.tar.gz
+tar zxvf 30sm_kiba_gra_seq.tar.gz
+```
+If you wish to obtain features for the entire 3DKKIBA dataset (approximately 500GB), download the 3dkkiba.tar.gz and then execute the following command:
+```
+wget 3dkkiba/3dkkiba.tar.gz
+tar zxvf 3dkkiba.tar.gz
 python process_3dkkiba.py
 ```
-**[2]** 训练和测试模型在激酶-抑制剂结合亲和力的预测性能，我们提供了三种分割方式，kinase cold-start, drug cold-start and kinase-drug cold-start, such that the model is tested on unseen proteins, unseen drugs or both. To use this option, set the argument --split_method using drug or both for the --split_method method, For example, to test on unseen drugs, run the following script.
+**[2]** Training and testing MMCLKin on the dataset with low protein sequence similarity. For kinase-inhibitor binding affinity, three splitting strategies are provided. For example, to test on unseen kinases, run the following script.
 ```
 python train_3dkkiba.py
+```
+For the selectivity of kinase inhibitors on datasets with low protein sequence similarity，execute the following command:
+```
+python train_3dkkiba_selectivity.py
 ```
 ### PDBBind v2020 and CASF-2016
 **[1]** Feature extraction, encompassing the biochemical and conformational characteristics of kinase inhibitors, evolutionary information and the intricate spatial structural features of binding pockets and kinase domains.这里，为了更加快速的得到每个复合物体系的特征，我们首先建议您下载我们生成的所有的激酶，所有结合口袋以及所有激酶抑制剂的特征。然后执行以下命令：
