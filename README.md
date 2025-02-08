@@ -142,21 +142,34 @@ For the selectivity of kinase inhibitors on datasets with low protein sequence s
 ```
 python train_3dkkiba_selectivity.py
 ```
+## Other usages
 ### PDBBind v2020 and CASF-2016
-**[1]** Feature extraction, encompassing the biochemical and conformational characteristics of kinase inhibitors, evolutionary information and the intricate spatial structural features of binding pockets and kinase domains.这里，为了更加快速的得到每个复合物体系的特征，我们首先建议您下载我们生成的所有的激酶，所有结合口袋以及所有激酶抑制剂的特征。然后执行以下命令：
+**[1]** Download the PDBBindv2020 dataset and extract its content.
+```
+wget pdbbind2020/clean_pdbbind2020.tar.gz
+tar zxvf 3dkkiba.tar.gz
+```
+**[2]** extracting the features of PDBBindv2020 and CASF-2016 datasets.
 ```
 python process_pdbbind2020.py
 ```
-**[2]** 训练和测试模型在激酶-抑制剂结合亲和力的预测性能，我们提供了三种分割方式，kinase cold-start, drug cold-start and kinase-drug cold-start, such that the model is tested on unseen proteins, unseen drugs or both. To use this option, set the argument --split_method using drug or both for the --split_method method, For example, to test on unseen drugs, run the following script.
+**[3]** Training and testing the generalization ability of MMCLKin for protein-drug binding affinity on the dataset with diversity protein structures.
 ```
 python train_pdbbind2020.py
 ```
-## Other usages
 
-### fine-tuning and predicion on G2019S LRRK2 mutant
+### Fine-tuning and predicion on G2019S LRRK2 mutant
+**[1]** Download checkpoints(~300MB) and a dataset composed of a 1:1 ratio of inhibitors targeting both wild-type LRRK2 and mutant LRRK2G2019S kinases.
+```
+wget pkls/finetune_lrrk2g2019s/MMCLKin_DTI_pearson_best.pkl
+wget mutant/lrrk2_g4.tar.gz
+tar zxvf lrrk2_g4.tar.gz
+wget mutant/lrrk2_mw.tar.gz
+tar zxvf lrrk2_mw.tar.gz
+```
+**[2]** Fine-tune the MMCLKin model, and then perform prediction and validation on the inhibitors identified by our group. Execute the following command::
 ```
 python finetune_lrrk2g2019s.py
 ```
-
 ## Contact
 Please submit GitHub issues or contact Yanan Tian(yanan.tian@mpu.edu.mo) for any questions related to the source code.
