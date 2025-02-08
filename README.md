@@ -43,7 +43,7 @@ Running the above lines of `pip install` should be sufficient to install all  MM
 ### Kinase-inhibitor binding affinity 
 
 #### Predictive performance of kinase-inhibitor binding affinity on the 3DKDavis dataset
-**[1]** Download checkpoints(~298MB) and dataset(15GB), and then extract the dataset.
+**[1]** Download checkpoints(~298MB) and dataset(~15GB), and then extract the dataset.
 ```
 wget pkls/3dkdavis_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl
 wget test_datasets/3dkdavis_new_kinase_affinity.tar.gz
@@ -55,31 +55,41 @@ tar zxvf 3dkdavis_new_kinase_affinity.tar.gz
 python test_3dkdavis_affinity.py
 ```
 #### Predictive performance of kinase-inhibitor binding affinity on the low sequence similarity dataset of 3DKKIBA
-**[1]** Download checkpoints(~298MB) and dataset(15GB), and then extract the dataset.
+**[1]** Download checkpoints(~300MB) and dataset(~6.8GB), and then extract the dataset.
 ```
 wget pkls/3dkkiba_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl
 wget test_datasets/3dkkiba_new_kinase_affinity.tar.gz
 cd test_datasets
 tar zxvf 3dkkiba_new_kinase_affinity.tar.gz
 ```
-**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on low sequence similarity dataset of 3DKDavis. Dataset splits for drug cold-start, kinase cold-start, and kinase-drug cold-start scenarios are provided, ensuring that the model is tested on unseen kinases, unseen drugs, or both. To enable this option, set the --label argument to new_kinase, new_drug, or both_new. For example, to evaluate on unseen kinases, run the following script:
+**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on low sequence similarity dataset of 3DKDavis. For example, to evaluate on unseen kinases, run the following script:
 ```
 python test_3dkkiba_affinity.py
 ```
 
-### The selectivity of kinase inhibitors
+### The selectivity of kinase inhibitors on human kinome
 
-#### Predictive performance of kinase inhibitor selectivity on the 3DKDavis dataset
-**[1]** Download Checkpoints(~298MB) and Dataset(15G).
-
-**[2]** Test MMCLKin,
+#### Predictive performance of the selectivity of kinase inhibitors on the 3DKDavis dataset
+**[1]** Download checkpoints(~300MB) and dataset(~15GB), and then extract the dataset.
+```
+wget pkls/3dkkiba_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl
+wget test_datasets/3dkdavis_new_kinase_selectivity.tar.gz
+cd test_datasets
+tar zxvf 3dkdavis_new_kinase_selectivity.tar.gz
+```
+**[2]** To ensure comprehensive learning of human kinases, the predictive performance for kinase inhibitor selectivity of MMCLKin was evalueated under the drug cold-start splitting strategy.
 ```
 python test_3dkdavis_selectivity.py
 ```
-#### Predictive performance of kinase inhibitor selectivity on the 3DKKIBA dataset
-**[1]** Download Checkpoints(~298MB) and Dataset(6G).
-
-**[2]** Test MMCLKin,
+#### Predictive performance of the selectivity of kinase inhibitor on the low sequence similarity dataset of 3DKKIBA
+**[1]** Download checkpoints(~300MB) and dataset(~6.1GB), and then extract the dataset.
+```
+wget pkls/3dkkiba_selectivity/MMCLKin_DTI_pearson_best.pkl
+wget test_datasets/3dkkiba_new_kinase_selectivity.tar.gz
+cd test_datasets
+tar zxvf 3dkkiba_new_kinase_selectivity.tar.gz
+```
+**[2]** Test the predictive performance for kinase inhibitor selectivity of MMCLKin on the low sequence similarity dataset of 3DKKIBA.
 ```
 python test_3dkkiba_selectivity.py
 ```
