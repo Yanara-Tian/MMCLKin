@@ -39,15 +39,48 @@ pip install lifelines
 Running the above lines of `pip install` should be sufficient to install all  MMCLKin's required packages (and their dependencies). Specific versions of the packages we tested were listed in `requirements.txt`.
 
 ## Reproduce Results
-### Kinase-inhibitor binding affinity 
-**[1]** Scoring Directly from the Downloaded Results Files
-**[2]** Download Checkpoints and Dataset
-**[3]** Test MMCLKin
 
-### the selectivity of kinase inhibitors
-**[1]** Scoring Directly from the Downloaded Results Files
-**[2]** Download Checkpoints and Dataset
-**[3]** Test MMCLKin
+### Kinase-inhibitor binding affinity 
+
+#### Predictive performance of kinase-inhibitor binding affinity on the 3DKDavis dataset
+**[1]** Download Checkpoints(~298MB) and Dataset(22G).
+
+**[2]** Test MMCLKin,
+```
+python test_3dkdavis_affinity.py
+```
+#### Predictive performance of kinase-inhibitor binding affinity on the 3DKKIBA dataset
+**[1]** Download Checkpoints(~298MB) and Dataset(22G).
+
+**[2]** Test MMCLKin,
+```
+python test_3dkkiba_affinity.py
+```
+
+### The selectivity of kinase inhibitors
+
+#### Predictive performance of kinase inhibitor selectivity on the 3DKDavis dataset
+**[1]** Download Checkpoints(~298MB) and Dataset(22G).
+
+**[2]** Test MMCLKin,
+```
+python test_3dkdavis_selectivity.py
+```
+#### Predictive performance of kinase inhibitor selectivity on the 3DKKIBA dataset
+**[1]** Download Checkpoints(~298MB) and Dataset(22G).
+
+**[2]** Test MMCLKin,
+```
+python test_3dkkiba_selectivity.py
+```
+### virtual screening on the experimental structure
+```
+examples/virtual_screening_lrrk2.ipynb
+```
+### virtual screening on the unresolved crystal structure
+```
+examples/virtual_screening_nuak2.ipynb
+```
 
 ## Feature extraction, training, and testing pipeline
 
@@ -79,16 +112,11 @@ python process_pdbbind2020.py
 python train_pdbbind2020.py
 ```
 ## Other usages
-### virtual screening on the experimental structure
-```
-examples/virtual_screening_8fo7.ipynb
-```
-### virtual screening on the unresolved crystal structure
-```
-examples/virtual_screening_nuak2.ipynb
-```
-### fine-tuning and predicion
 
+### fine-tuning and predicion on G2019S LRRK2 mutant
+```
+python finetune_lrrk2g2019s.py
+```
 
 ## Contact
 Please submit GitHub issues or contact Yanan Tian(yanan.tian@mpu.edu.mo) for any questions related to the source code.
