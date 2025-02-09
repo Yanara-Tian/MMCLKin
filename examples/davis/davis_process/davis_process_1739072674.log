@@ -1,0 +1,53 @@
+[11:45:41] Explicit valence for atom # 2 C greater than permitted
+/home/tianyn/.conda/envs/mmclkin/lib/python3.8/site-packages/torch/nn/modules/rnn.py:62: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn("dropout option adds dropout after all but last "
+/home/tianyn/.conda/envs/mmclkin/lib/python3.8/site-packages/torch/nn/modules/rnn.py:62: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn("dropout option adds dropout after all but last "
+['N', 'C', 'N', 'C', 'O', 'C', 'C', 'O', 'C', 'O', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'S']
+['N', 'C', 'N', 'C', 'O', 'C', 'C', 'O', 'C', 'O', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'S']
+两者相等
+['N', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'S', 'O', 'O', 'N', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S']
+['N', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'S', 'O', 'O', 'N', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S']
+两者相等
+['N', 'C', 'C', 'C', 'N', 'C', 'C', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'C', 'N', 'C', 'N']
+['N', 'C', 'C', 'C', 'N', 'C', 'C', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'C', 'N', 'C', 'N']
+两者相等
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'O', 'N', 'C', 'S', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N']
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'O', 'N', 'C', 'S', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N']
+两者相等
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'I', 'C', 'O', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'C', 'O', 'C', 'C', 'C', 'O', 'N', 'C', 'S', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N']
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'I', 'C', 'O', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'C', 'O', 'C', 'C', 'C', 'O', 'N', 'C', 'S', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N']
+两者相等
+['O', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'N', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'O', 'O', 'C', 'C']
+['O', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'N', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'O', 'O', 'C', 'C']
+两者相等
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'O', 'N', 'C', 'S', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N']
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'O', 'N', 'C', 'S', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N']
+两者相等
+['N', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'S', 'O', 'O', 'N', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S']
+['N', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'S', 'O', 'O', 'N', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S']
+两者相等
+['N', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'S', 'O', 'O', 'N', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S']
+['N', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'S', 'O', 'O', 'N', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S']
+两者相等
+['N', 'C', 'N', 'C', 'O', 'C', 'C', 'O', 'C', 'O', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'S']
+['N', 'C', 'N', 'C', 'O', 'C', 'C', 'O', 'C', 'O', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'S']
+两者相等
+['N', 'C', 'C', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S', 'C', 'O', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'C']
+['N', 'C', 'C', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S', 'C', 'O', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'C']
+两者相等
+['N', 'C', 'C', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S', 'C', 'O', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'C']
+['N', 'C', 'C', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S', 'C', 'O', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'C']
+两者相等
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'O', 'N', 'C', 'S', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N']
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'O', 'N', 'C', 'S', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N']
+两者相等
+['N', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'S', 'O', 'O', 'N', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S']
+['N', 'C', 'N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'N', 'N', 'C', 'C', 'C', 'C', 'S', 'O', 'O', 'N', 'C', 'C', 'O', 'C', 'C', 'C', 'C', 'S']
+两者相等
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'O', 'C', 'C', 'O', 'C', 'O', 'N', 'C', 'S', 'N', 'C', 'S', 'C', 'C', 'N']
+['N', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'O', 'O', 'C', 'C', 'O', 'C', 'O', 'N', 'C', 'S', 'N', 'C', 'S', 'C', 'C', 'N']
+两者相等
+{'': Data(pro_graphs=Graph(num_nodes=260, num_edges=7800,
+      ndata_schemes={'h': Scheme(shape=(6,), dtype=torch.float32)}
+      edata_schemes={}), pro_index=[260], pro_atoms_feats_s=[260, 6], pro_atoms_feats_v=[260, 3, 3], pro_coords_feats=[260, 3], pro_edges_feats_s=[7800, 32], pro_edges_feats_v=[7800, 1, 3], pro_edge_index=[2, 7800], pro_token_repre=[1, 262, 1280], pro_fp='QAPEFLLGDGSFGSVYRAAYEGEEVAVKIFNKHTSLRLLRQELVVLCHLHHPSLISLLAAGIRPRMLVMELASKGSLDRLLQQDKASLTRTLQHRIALHVADGLRYLHSAMIIYRDLKPHNVLLFTLYPNAAIIAKIADYGIAQYCCRMGIKTSEGTPGFRAPEVARGNVIYNQQADVYSFGLLLYDILTTGGRIVEGLKFPNEFDELEIQGKLPDPVKEYGCAPWPMVEKLIKQCLKENPQERPTSAQVFDILNSAELV', pr_dist=[7800], pr_theta=[7800], pr_phi=[7800], pr_tau=[7800])}

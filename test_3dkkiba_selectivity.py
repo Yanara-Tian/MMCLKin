@@ -20,7 +20,7 @@ def comput_sds(real_results, pred_results, cutoff):
     
     return n, len(real_results), real_sds, m, len(pred_results), pred_sds
 
-d_path = './test_datasets/3dkkiba_new_kinase_selectivity'
+d_path = './test_datasets/3dkkiba_new_drug_selectivity'
 valid_datasets = os.listdir(d_path)
 valid_dataset = {}
 for drug in valid_datasets:
@@ -87,5 +87,6 @@ with torch.no_grad():
     print( 'rp_pearson', rp_pearson, 'mean_selectivity', mean_sc, 'results', results)
     name = ['drug', 'real_posi', 'all_real', 'real_sds', 'pred_posi','all_pred','pred_sds', 'single_mse', 'selectivity_coiff']
     dfse = pd.DataFrame(columns=name, data=valid_results)
+    os.makedirs('./output/kiba/selectivity', exist_ok=True)
     s_path = os.path.join('./output/kiba/selectivity', f'MMCLKin_DTI_kiba_best.csv')
     dfse.to_csv(s_path, encoding='utf-8')

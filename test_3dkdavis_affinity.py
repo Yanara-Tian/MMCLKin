@@ -15,7 +15,7 @@ from torch_geometric.data import Data
 import pandas as pd
 from dataset_loader import Pdbbindset
 from torch.nn.utils.rnn import pad_sequence
-import shutil 
+import shutil
 
 warnings.filterwarnings('ignore')
 parser = argparse.ArgumentParser()
@@ -23,7 +23,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--seed', type=int, default=1234)
 parser.add_argument('--dataset', type=str, default='davis', help='tox21, lipophilicity')
 parser.add_argument('--data_path', type=str, default='./test_datasets/3dkdavis_new_kinase_affinity', help='./pdbfile/davis/na_plp_pts, home/tianyn/source_tyn/pkidti/pdbfile/davis/davis_gra_seq_pts_0707')
-parser.add_argument('--label', default='new_protein', type=str, help='grc, time')
+parser.add_argument('--label', default='new_kinase', type=str, help='grc, time')
 parser.add_argument('--model_save_path', default='davis_0000', type=str, help='number of epoch')
 parser.add_argument('--node_in_dim', default=6, type=int, help='output size of model')
 parser.add_argument('--node_h_dim', default=6, type=int, help='the number of num_heads')
@@ -57,7 +57,7 @@ class Logger(object):
         pass
 
 #--------------------------load model and gpu-----------------------------------
-device = torch.device('cuda:3' if torch.cuda.is_available() else "cpu")
+device = torch.device('cuda:0' if torch.cuda.is_available() else "cpu")
 criterion = get_loss(args.loss)
 
 def sim(zi, zj):
@@ -94,7 +94,7 @@ def process_data(path, datacsv_path, label):
             elif drug in valid_data:
                 valid_dataset.append(i)
              
-    elif label == "new_protein":
+    elif label == "new_kinase":
         pid = list(pid)
         setup_seed(1234)
         random.seed(1234)
@@ -367,7 +367,7 @@ def main(params):
     del valid_dataset
     
     model = MMCLKin(args.lstm_dropout, args.alpha, args.num_heads, hidden_dim=params['hidden_dim'], dropout_rate=params['dropout_rate'], n_head=8, smile_vocab=63, local_rank=device)  
-    path = './pkls/3dkdavis_new_kinase/MMCLKin_DTI_pearson_best.pkl'
+    path = './pkls/3dkdavis_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl'
     model.load_state_dict(torch.load(path)['model'], strict=True)
     model.to(device)
 

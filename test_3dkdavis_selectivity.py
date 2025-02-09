@@ -21,7 +21,7 @@ def comput_sds(real_results, pred_results):
     
     return n, len(real_results), real_sds, m, len(pred_results), pred_sds
 
-d_path = '/home/tianyn/source_tyn/kisa/test_datasets/3dkdavis_new_kinase_selectivity'
+d_path = './test_datasets/3dkdavis_new_drug_selectivity'
 valid_datasets = os.listdir(d_path)
 valid_dataset = {}
 for drug in valid_datasets:
@@ -34,11 +34,7 @@ for drug in valid_datasets:
 valid_dataset = list(valid_dataset.values())
 device = torch.device('cuda:0' if torch.cuda.is_available() else "cpu")
         
-# path = '/raid/source_tyn/pkidti/pdbfile/davis/processed/cl_gs_20240728_new_drug/MCLLNGRCSE_DTI_davis_1723177374_0.6015/MCLLNGRCSE_DTI_pearson_best.pkl'
-# path = '/raid/source_tyn/pkidti/pdbfile/davis/processed/cl_gs_20240728_new_drug/MCLLNGRCSE_DTI_davis_1723219036_0.6035/MCLLNGRCSE_DTI_pearson_best.pkl'
-# path = '/raid/source_tyn/pkidti/pdbfile/davis/processed/cl_gs_20240728_new_drug/MCLLNGRCSE_DTI_davis_1723037518_0.6043/MCLLNGRCSE_DTI_pearson_best.pkl'
-# path = '/raid/source_tyn/pkidti/pdbfile/davis/processed/cl_gs_20240728_new_drug/MCLLNGRCSE_DTI_davis_1723075405_0.6065/MCLLNGRCSE_DTI_pearson_best.pkl'
-path = '/raid/source_tyn/pkidti/pdbfile/davis/processed/cl_gs_20240728_new_drug/MCLLNGRCSE_DTI_davis_1723128634_0.6056/MCLLNGRCSE_DTI_pearson_best.pkl'
+path = './pkls/3dkdavis_selectivity/0.6056MMCLKin_DTI_pearson_best.pkl'
 
 lstm_dropout = 0.2
 alpha = 0.2
@@ -91,5 +87,6 @@ with torch.no_grad():
     print('rp_pearson', rp_pearson, 'mean_selectivity', mean_sc, 'results', results)
     name = ['drug', 'real_posi', 'all_real', 'real_sds', 'pred_posi','all_pred','pred_sds', 'single_mse', 'selectivity_coiff']
     dfse = pd.DataFrame(columns=name, data=valid_results)
+    os.makedirs('./output/davis/selectivity', exist_ok=True)
     s_path = os.path.join('./output/davis/selectivity', f'MMCLKin_DTI_mse_best44.csv')
     dfse.to_csv(s_path, encoding='utf-8')
