@@ -107,7 +107,7 @@ examples/virtual_screening_crk12.ipynb
 ## Feature extraction, training, and testing pipeline
 
 ### 3DKDavis 
-**[1]** Download the new constructed 3DKDavis dataset and extract its content.
+**[1]** Download the new constructed 3DKDavis dataset(~1GB)to main directory and extract its content.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/3dkdavis/3dkdavis.tar.gz
 tar zxvf 3dkdavis.tar.gz
@@ -125,7 +125,7 @@ For the selectivity of kinase inhibitors, only the drug cold-start splitting met
 python train_3dkdavis_selectivity.py
 ```
 ### 3DKKIBA
-**[1]** Download the new constructed low sequence similarity dataset of 3DKDavis and extract its content.
+**[1]** Download the new constructed low sequence similarity dataset(~35GB)of 3DKDavis and extract its content.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/3dkkiba/30sm_3dkkiba_gra_seq.tar.gz
 tar zxvf 30sm_3dkkiba_gra_seq.tar.gz
@@ -161,7 +161,7 @@ python train_pdbbind2020.py
 ```
 
 ### Fine-tuning and predicion on G2019S LRRK2 mutant
-**[1]** Download checkpoints(~300MB) and a dataset composed of a 1:1 ratio of inhibitors targeting both wild-type LRRK2 and LRRK2 G2019S  mutant kinases.
+**[1]** Download checkpoints(~900MB) and a dataset (~5GB) composed of a 1:1 ratio of inhibitors targeting both wild-type LRRK2 and LRRK2 G2019S  mutant kinases.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/finetune_lrrk2g2019s.tar.gz
 tar zxvf finetune_lrrk2g2019s.tar.gz -C ./pkls
