@@ -47,7 +47,7 @@ Running the above lines of `pip install` should be sufficient to install all  MM
 **[1]** Download checkpoints(~298MB) and dataset(~15GB) to main directory, and then extract them.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkdavis_new_kinase_affinity.tar.gz
-tar zxvf 3dkdavis_new_kinase_affinity.tar.gz
+tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkdavis_new_kinase_affinity.tar.gz
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz
 ```
@@ -56,11 +56,11 @@ tar zxvf 3dkdavis_new_kinase_affinity.tar.gz
 python test_3dkdavis_affinity.py
 ```
 #### Predictive performance of kinase-inhibitor binding affinity on the low sequence similarity dataset of 3DKKIBA
-**[1]** Download checkpoints(~300MB) and dataset(~6.8GB), and then extract the dataset.
+**[1]** Download checkpoints(~300MB) and dataset(~6.8GB)to main directory, and then extract the dataset.
 ```
-wget pkls/3dkkiba_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl
-wget test_datasets/3dkkiba_new_kinase_affinity.tar.gz
-cd test_datasets
+https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkkiba_new_kinase_affinity.tar.gz
+tar zxvf 3dkkiba_new_kinase_affinity.tar.gz -C ./pkls
+https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkkiba_new_kinase_affinity.tar.gz
 tar zxvf 3dkkiba_new_kinase_affinity.tar.gz
 ```
 **[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on low sequence similarity dataset of 3DKDavis. For example, to evaluate on unseen kinases, run the following script:
