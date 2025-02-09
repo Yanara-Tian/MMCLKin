@@ -23,13 +23,13 @@ warnings.filterwarnings('ignore')
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--seed', type=int, default=1234)
-parser.add_argument('--dataset', type=str, default='kiba', help='tox21, lipophilicity')
-parser.add_argument('--data_path', type=str, default='./kiba/kiba_gra_seq_pts', help='./davis/na_plp_pts, ./kiba/na_plp_pts')
+parser.add_argument('--dataset', type=str, default='3dkkiba', help='tox21, lipophilicity')
+parser.add_argument('--data_path', type=str, default='./30sm_3dkkiba_gra_seq', help='./3dkkiba/3dkkiba_gra_seq_pts, ./30sm_3dkkiba_gra_seq')
 parser.add_argument('--label', default='new_drug', type=str, help='grc, time')
 
 parser.add_argument('--EPOCHS', default=1, type=int, help='number of epoch')
 parser.add_argument('--early_stop_patience', default=100, type=int, help='number of epoch')
-parser.add_argument('--model_save_path', default='kiba_0000', type=str, help='number of epoch')
+parser.add_argument('--model_save_path', default='3dkkiba_0000', type=str, help='number of epoch')
 
 parser.add_argument('--node_in_dim', default=6, type=int, help='output size of model')
 parser.add_argument('--node_h_dim', default=6, type=int, help='the number of num_heads')
@@ -63,7 +63,7 @@ class Logger(object):
         pass
 
 #--------------------------load model and gpu-----------------------------------
-device = torch.device('cuda:2' if torch.cuda.is_available() else "cpu")
+device = torch.device('cuda:0' if torch.cuda.is_available() else "cpu")
 
 criterion = get_loss(args.loss)
 
@@ -169,7 +169,7 @@ def process_data(datasets, datacsv_path, label):
             elif drug in valid_data:
                 valid_dataset.append(i)
          
-    elif label == "new_protein":
+    elif label == "new_kinase":
         pid = list(pid)
         setup_seed(1234)
         random.seed(1234)

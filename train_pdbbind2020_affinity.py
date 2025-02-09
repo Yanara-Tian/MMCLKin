@@ -20,8 +20,6 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('--seed', type=int, default=1234)
 parser.add_argument('--dataset', type=str, default='pdbbind2020', help='tox21, lipophilicity')
-parser.add_argument('--split', default='grc', type=str, help='grc, time')
-
 parser.add_argument('--EPOCHS', default=300, type=int, help='number of epoch')
 parser.add_argument('--early_stop_patience', default=100, type=int, help='number of epoch')
 parser.add_argument('--model_save_path', default='pdbbind_0000', type=str, help='number of epoch')
@@ -56,7 +54,7 @@ class Logger(object):
         pass
 
 #--------------------------load model and gpu-----------------------------------
-device = torch.device('cuda:1' if torch.cuda.is_available() else "cpu")
+device = torch.device('cuda:0' if torch.cuda.is_available() else "cpu")
 
 criterion = get_loss(args.loss)
 
@@ -161,20 +159,20 @@ def gcl_loss(z_1d, z_3d):
 
 def main(params):
     MODEL_train_NAME = f"{args.model}_{args.dataset}_{int(time.time())}"
-    sa_path = f'./output/{args.dataset}/{args.model_save_path}_{args.split}/{MODEL_train_NAME}'
+    sa_path = f'./output/{args.dataset}/{args.model_save_path}{MODEL_train_NAME}'
     os.system('mkdir -p {}'.format(sa_path))
     log_file_name = f"{sa_path}/{MODEL_train_NAME}.log"
     sys.stdout = Logger(log_file_name)
     sys.stderr = Logger(log_file_name)
     
-    print(f'using {args.model} to evaluate the {args.dataset} dataset with {args.split}\n')
-    path = './pdbbind2020/pdbbind2020_3dgraph_esm_berta_features/plp_pts'
+    print(f'using {args.model} to evaluate the {args.dataset} dataset\n')
+    path = './pdbbind2020/pdbbind2020_3dgraph_esm_berta_features'
     datasets = os.listdir(path)
     print('datasets:', len(datasets))
     setup_seed(1234)
     
-    refine_txt = './pdbbind2020/pdbbind_index/INDEX_refined_set.2020'
-    core_txt = './pdbbind2020/pdbbind_index/CoreSet.dat'
+    refine_txt = './pdbbind2020/INDEX_refined_set.2020'
+    core_txt = './pdbbind2020/CoreSet.dat'
     ref_sets = read_ref(refine_txt)
 
     ref_sets = check_exist(ref_sets, datasets)

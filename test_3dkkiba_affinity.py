@@ -23,10 +23,10 @@ warnings.filterwarnings('ignore')
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--seed', type=int, default=1234)
-parser.add_argument('--dataset', type=str, default='kiba', help='tox21, lipophilicity')
+parser.add_argument('--dataset', type=str, default='3dkkiba', help='tox21, lipophilicity')
 parser.add_argument('--data_path', type=str, default='./test_datasets/3dkkiba_new_kinase_affinity', help='./davis/na_plp_pts, ./kiba/na_plp_pts')
 parser.add_argument('--label', default='new_kinase', type=str, help='grc, time')
-parser.add_argument('--model_save_path', default='kiba_0000', type=str, help='number of epoch')
+parser.add_argument('--model_save_path', default='3dkkiba_0000', type=str, help='number of epoch')
 
 parser.add_argument('--node_in_dim', default=6, type=int, help='output size of model')
 parser.add_argument('--node_h_dim', default=6, type=int, help='the number of num_heads')
@@ -391,7 +391,7 @@ def main(params):
     model.load_state_dict(torch.load(path)['model'], strict=True)
     model.to(device)
 
-    print("init done")         
+    print("init done") 
     print(str(args))
     print('learning_rate:{0}, batch_size:{1},hidden_dim:{2}, dropout_rate:{3}, lr_reduce_rate:{4}, \
         beta1:{5},  beta2:{6},  beta3:{7}, beta4:{8}'\

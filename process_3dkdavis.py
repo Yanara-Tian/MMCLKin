@@ -24,8 +24,8 @@ class Logger(object):
     def flush(self):
         pass
 
-MODEL_train_NAME = f"davis_process_{int(time.time())}"
-sa_path = f'./davis/davis_process'
+MODEL_train_NAME = f"3dkdavis_process_{int(time.time())}"
+sa_path = f'./3dkdavis/3dkdavis_process'
 os.system('mkdir -p {}'.format(sa_path))
 log_file_name = f"{sa_path}/{MODEL_train_NAME}.log"
 sys.stdout = Logger(log_file_name)
@@ -331,28 +331,31 @@ def save_feas_pt(kinase_feature, pocket_feature, affinity, ligand_feature):
     return mol_pocket_protein_fea
 
 def extract_3dgs_features(process_path, ligand_path, kinase_path, pocket_path, sa_path, save_path, da_set):
+    error_kina =[]
+    error_pock = []
+    error_mol = []
     # model1, alphabet = esm.pretrained.esm1b_t33_650M_UR50S()
     # batch_converter = alphabet.get_batch_converter()
     # kinase_fes, kina_1022, error_kina = generate_kin_fes(kinase_path, batch_converter, model1)
     # print(f'there are {len(kina_1022)} kinase exceeding 1022, they are {kina_1022}')
     # print(f'there are {len(error_kina)} error kinase, they are {error_kina}')
-    # torch.save(kinase_fes, f'{sa_path}/davis_allkinase.pt')
+    # torch.save(kinase_fes, f'{sa_path}3dkdavis_allkinase.pt')
 
     # pocket_fes, pock_1022, error_pock = generate_kin_fes(pocket_path, batch_converter, model1)
     # print(f'there are {len(pock_1022)} pockets exceeding 1022, they are {pock_1022}')
     # print(f'there are {len(error_pock)} error pockets, they are {error_pock}')
-    # torch.save(pocket_fes, f'{sa_path}/davis_allpockets.pt')
+    # torch.save(pocket_fes, f'{sa_path}/3dkdavis_allpockets.pt')
 
     # model_name = "DeepChem/ChemBERTa-10M-MLM"
     # model = AutoModel.from_pretrained(model_name)
     # tokenizer = AutoTokenizer.from_pretrained(model_name)
     # lig_fes, error_mol = gene_smi_fes(ligand_path, model, tokenizer)
     # print(f'there are {len(error_mol)} error ligands, they are {error_mol}')
-    # torch.save(lig_fes, f'{sa_path}/davis_allligands.pt')
+    # torch.save(lig_fes, f'{sa_path}/3dkdavis_allligands.pt')
 
-    kinase_fes = torch.load(f'{sa_path}/davis_allkinase.pt')
-    pocket_fes = torch.load(f'{sa_path}/davis_allpockets.pt')
-    lig_fes = torch.load(f'{sa_path}/davis_allligands.pt')
+    kinase_fes = torch.load(f'{sa_path}/3dkdavis_allkinase.pt')
+    pocket_fes = torch.load(f'{sa_path}/3dkdavis_allpockets.pt')
+    lig_fes = torch.load(f'{sa_path}/3dkdavis_allligands.pt')
     
     data_path = open(process_path)
     pros_uni = csv.reader(data_path)
@@ -380,12 +383,12 @@ def extract_3dgs_features(process_path, ligand_path, kinase_path, pocket_path, s
                 torch.save(mol_pocket_protein_fea, f'{save_path}/{da_set}_{i}_{drug_id}_{lig_name}_{protein_id}_{kinase_name}_plp.pt')
                 
 if __name__=='__main__':
-    save_path = './davis/davis_gra_seq_pts'
+    save_path = './3dkdavis/3dkdavis_gra_seq_pts'
     os.makedirs(save_path, exist_ok = True)
-    process_path = './davis/new_davis_overall.csv'
-    da_set = 'davis'
-    sa_path = './davis'
-    ligands_sdf_path = './davis/ligand_sdfs'
-    davis_kinase_path = './davis/davis_kinase_pdbs'
-    pockets_path = './davis/pockets'
+    process_path = './3dkdavis/new_3dkdavis_overall.csv'
+    da_set = '3dkdavis'
+    sa_path = './3dkdavis'
+    ligands_sdf_path = './3dkdavis/ligand_sdfs'
+    davis_kinase_path = './3dkdavis/3dkdavis_kinase_pdbs'
+    pockets_path = './3dkdavis/pockets'
     extract_3dgs_features(process_path, ligands_sdf_path, davis_kinase_path, pockets_path, sa_path, save_path, da_set)

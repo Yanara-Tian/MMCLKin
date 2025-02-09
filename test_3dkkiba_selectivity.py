@@ -51,7 +51,7 @@ real_sdses = []
 pred_sdses = []
 sele_coif = 0
 cutoff = 12
-print(f'the cutoff value is : {cutoff}') 
+print(f'the cutoff value is : {cutoff}')
 with torch.no_grad():
     for i, x_feats in enumerate(valid_dataset):
         print(f'processing the {i}th kinase inhibitor')
@@ -87,6 +87,6 @@ with torch.no_grad():
     print( 'rp_pearson', rp_pearson, 'mean_selectivity', mean_sc, 'results', results)
     name = ['drug', 'real_posi', 'all_real', 'real_sds', 'pred_posi','all_pred','pred_sds', 'single_mse', 'selectivity_coiff']
     dfse = pd.DataFrame(columns=name, data=valid_results)
-    os.makedirs('./output/kiba/selectivity', exist_ok=True)
-    s_path = os.path.join('./output/kiba/selectivity', f'MMCLKin_DTI_kiba_best.csv')
+    os.makedirs('./output/3dkkiba/selectivity', exist_ok=True)
+    s_path = os.path.join('./output/3dkkiba/selectivity', f'MMCLKin_DTI_3dkkiba_best.csv')
     dfse.to_csv(s_path, encoding='utf-8')

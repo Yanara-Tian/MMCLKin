@@ -24,11 +24,11 @@ warnings.filterwarnings('ignore')
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--seed', type=int, default=1234)
-parser.add_argument('--dataset', type=str, default='davis', help='tox21, lipophilicity')
-parser.add_argument('--data_path', type=str, default='./davis/davis_gra_seq_pts', help='./pdbfile/davis/na_plp_pts, ./pdbfile/kiba/na_plp_pts')
+parser.add_argument('--dataset', type=str, default='3dkdavis', help='tox21, lipophilicity')
+parser.add_argument('--data_path', type=str, default='./3dkdavis/3dkdavis_gra_seq_pts', help='./pdbfile/davis/na_plp_pts, ./pdbfile/kiba/na_plp_pts')
 parser.add_argument('--EPOCHS', default=150, type=int, help='number of epoch')
 parser.add_argument('--early_stop_patience', default=50, type=int, help='number of epoch')
-parser.add_argument('--model_save_path', default='davis_0000', type=str, help='number of epoch')
+parser.add_argument('--model_save_path', default='3dkdavis_0000', type=str, help='number of epoch')
 
 parser.add_argument('--node_in_dim', default=6, type=int, help='output size of model')
 parser.add_argument('--node_h_dim', default=6, type=int, help='the number of num_heads')
@@ -62,7 +62,7 @@ class Logger(object):
         pass
 
 #--------------------------load model and gpu-----------------------------------
-device = torch.device('cuda:3' if torch.cuda.is_available() else "cpu")
+device = torch.device('cuda:0' if torch.cuda.is_available() else "cpu")
 criterion = get_loss(args.loss)
 
 def comput_sds(real_results, pred_results):

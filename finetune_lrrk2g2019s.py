@@ -59,7 +59,7 @@ class Logger(object):
         pass
 
 #--------------------------load model and gpu-----------------------------------
-device = torch.device('cuda:1' if torch.cuda.is_available() else "cpu")
+device = torch.device('cuda:0' if torch.cuda.is_available() else "cpu")
 criterion = get_loss(args.loss)
 
 def valid_test(beta1, beta2, beta3, beta4, model, dataloader, batch_size, path, epoch, length_v, dataset):
@@ -304,9 +304,9 @@ def main(params):
     sys.stderr = Logger(log_file_name)
     
     setup_seed(1234)
-    train_path = './cases/mutant/lrrk2_mw'
+    train_path = './mutant/lrrk2_mw'
     train_dataset = os.listdir(train_path)
-    test_path = './cases/mutant/lrrk2_g4'
+    test_path = './mutant/lrrk2_g4'
     test_dataset = os.listdir(test_path)
 
     print('train_dataset:', len(train_dataset))

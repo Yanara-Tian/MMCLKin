@@ -25,8 +25,8 @@ class Logger(object):
     def flush(self):
         pass
 
-MODEL_train_NAME = f"kiba_process_{int(time.time())}"
-sa_path = f'./kiba/kiba_process'
+MODEL_train_NAME = f"3dkkiba_process_{int(time.time())}"
+sa_path = f'./3dkkiba/3dkkiba_process'
 os.system('mkdir -p {}'.format(sa_path))
 log_file_name = f"{sa_path}/{MODEL_train_NAME}.log"
 sys.stdout = Logger(log_file_name)
@@ -340,22 +340,22 @@ def extract_3dgs_features(process_path, ligand_path, kinase_path, pocket_path, s
     # kinase_fes, kina_1022, error_kina = generate_kin_fes(kinase_path, batch_converter, model1)
     # print(f'there are {len(kina_1022)} kinase exceeding 1022, they are {kina_1022}')
     # print(f'there are {len(error_kina)} error kinase, they are {error_kina}')
-    # torch.save(kinase_fes, f'{sa_path}/kiba_allkinase.pt')
+    # torch.save(kinase_fes, f'{sa_path}/3dkkiba_allkinase.pt')
 
     # pocket_fes, pock_1022, error_pock = generate_kin_fes(pocket_path, batch_converter, model1)
     # print(f'there are {len(pock_1022)} pockets exceeding 1022, they are {pock_1022}')
     # print(f'there are {len(error_pock)} error pockets, they are {error_pock}')
-    # torch.save(pocket_fes, f'{sa_path}/kiba_allpockets.pt')
+    # torch.save(pocket_fes, f'{sa_path}/3dkkiba_allpockets.pt')
 
     # model_name = "DeepChem/ChemBERTa-10M-MLM"
     # model = AutoModel.from_pretrained(model_name)
     # tokenizer = AutoTokenizer.from_pretrained(model_name)
     # lig_fes, error_mol = gene_smi_fes(ligand_path, model, tokenizer)
     # print(f'there are {len(error_mol)} error ligands, they are {error_mol}')
-    # torch.save(lig_fes, f'{sa_path}/kiba_allligand.pt')
-    kinase_fes = torch.load(f'{sa_path}/kiba_allkinase.pt')
-    pocket_fes = torch.load(f'{sa_path}/kiba_allpockets.pt')
-    lig_fes = torch.load(f'{sa_path}/kiba_allligand.pt')
+    # torch.save(lig_fes, f'{sa_path}/3dkkiba_allligand.pt')
+    kinase_fes = torch.load(f'{sa_path}/3dkkiba_allkinase.pt')
+    pocket_fes = torch.load(f'{sa_path}/3dkkiba_allpockets.pt')
+    lig_fes = torch.load(f'{sa_path}/3dkkiba_allligand.pt')
     data_path = open(process_path)
     df = pd.read_csv(process_path)
     error_com = []
@@ -389,12 +389,12 @@ def extract_3dgs_features(process_path, ligand_path, kinase_path, pocket_path, s
                 torch.save(mol_pocket_protein_fea, f'{save_path}/{da_set}_{i}_{drug_id}_{lig_name}_{protein_id}_{kinase_name}_plp.pt')
 
 if __name__=='__main__':
-    save_path = './kiba/kiba_gra_seq_pts'
+    save_path = './3dkkiba/3dkkiba_gra_seq_pts'
     os.makedirs(save_path, exist_ok = True)
-    process_path = './kiba/new_kiba_overall.csv'
-    da_set = 'kiba'
-    sa_path = './kiba'
-    ligands_sdf_path = './kiba/ligand_sdfs'
-    kiba_kinase_path = './kiba/kiba_kinase_pdbs'
-    pockets_path = './kiba/pockets'
+    process_path = './3dkkiba/new_3dkkiba_overall.csv'
+    da_set = '3dkkiba'
+    sa_path = './3dkkiba'
+    ligands_sdf_path = './3dkkiba/ligand_sdfs'
+    kiba_kinase_path = './3dkkiba/3dkkiba_kinase_pdbs'
+    pockets_path = './3dkkiba/pockets'
     extract_3dgs_features(process_path, ligands_sdf_path, kiba_kinase_path, pockets_path, sa_path, save_path, da_set)
