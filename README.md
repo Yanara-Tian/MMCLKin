@@ -44,7 +44,7 @@ Running the above lines of `pip install` should be sufficient to install all  MM
 ### Kinase-inhibitor binding affinity 
 
 #### Predictive performance of kinase-inhibitor binding affinity on the 3DKDavis dataset
-**[1]** Download checkpoints(~298MB) and dataset(~15GB), and then extract the dataset.
+**[1]** Download checkpoints(~298MB) and dataset(~15GB) to main directory, and then extract them.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkdavis_new_kinase_affinity.tar.gz
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz
