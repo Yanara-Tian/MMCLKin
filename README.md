@@ -118,7 +118,7 @@ python process_3dkdavis.py
 ```
 **[3]** Three splitting strategies (kinase cold-start, drug cold-start and kinase-drug cold-start) remain available for training and evaluating the predictive performance of MMCLKin on kinase-inhibitor binding affinity. For example, to train and test on unseen kinases, run the following script:
 ```
-python train_3dkdavis.py
+python train_3dkdavis_affinity.py
 ```
 For the selectivity of kinase inhibitors, only the drug cold-start splitting method is provided，execute the following command:
 ```
@@ -138,7 +138,7 @@ python process_3dkkiba.py
 ```
 **[2]** Training and testing MMCLKin on the dataset with low protein sequence similarity. For kinase-inhibitor binding affinity, three splitting strategies are provided. For example, to test on unseen kinases, run the following script.
 ```
-python train_3dkkiba.py
+python train_3dkkiba_affinity.py
 ```
 For the selectivity of kinase inhibitors on datasets with low protein sequence similarity，execute the following command:
 ```
