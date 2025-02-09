@@ -71,24 +71,24 @@ python test_3dkkiba_affinity.py
 ### The selectivity of kinase inhibitors on human kinome
 
 #### Predictive performance of the selectivity of kinase inhibitors on the 3DKDavis dataset
-**[1]** Download checkpoints(~300MB) and dataset(~15GB), and then extract the dataset.
+**[1]** Download checkpoints(~300MB) and dataset(~15GB) to main directory, and then extract the dataset.
 ```
-wget pkls/3dkkiba_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl
-wget test_datasets/3dkdavis_new_drug_selectivity.tar.gz
-cd test_datasets
-tar zxvf 3dkdavis_new_drug_selectivity.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkdavis_selectivity.tar.gz
+tar zxvf 3dkdavis_selectivity.tar.gz -C ./pkls
+https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkdavis_new_drug_selectivity.tar.gz
+tar zxvf 3dkdavis_new_drug_selectivity.tar.gz -C ./test_datasets
 ```
 **[2]** To ensure comprehensive learning of human kinases, the predictive performance for kinase inhibitor selectivity of MMCLKin was evalueated under the drug cold-start splitting strategy.
 ```
 python test_3dkdavis_selectivity.py
 ```
 #### Predictive performance of the selectivity of kinase inhibitor on the low sequence similarity dataset of 3DKKIBA
-**[1]** Download checkpoints(~300MB) and dataset(~6.1GB), and then extract the dataset.
+**[1]** Download checkpoints(~300MB) and dataset(~6.1GB) to main directory, and then extract the dataset.
 ```
-wget pkls/3dkkiba_selectivity/MMCLKin_DTI_pearson_best.pkl
-wget test_datasets/3dkkiba_new_drug_selectivity.tar.gz
-cd test_datasets
-tar zxvf 3dkkiba_new_drug_selectivity.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkkiba_selectivity.tar.gz
+tar zxvf 3dkkiba_selectivity.tar.gz -C ./pkls
+https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkkiba_new_drug_selectivity.tar.gz
+tar zxvf 3dkkiba_new_drug_selectivity.tar.gz -C ./test_datasets
 ```
 **[2]** Test the predictive performance for kinase inhibitor selectivity of MMCLKin on the low sequence similarity dataset of 3DKKIBA.
 ```
