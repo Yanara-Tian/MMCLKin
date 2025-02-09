@@ -46,9 +46,9 @@ Running the above lines of `pip install` should be sufficient to install all  MM
 #### Predictive performance of kinase-inhibitor binding affinity on the 3DKDavis dataset
 **[1]** Download checkpoints(~298MB) and dataset(~15GB), and then extract the dataset.
 ```
-wget pkls/3dkdavis_new_kinase_affinity/MMCLKin_DTI_mse_best.pkl
-wget test_datasets/3dkdavis_new_kinase_affinity.tar.gz
-cd test_datasets
+https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkdavis_new_kinase_affinity.tar.gz
+tar zxvf 3dkdavis_new_kinase_affinity.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkdavis_new_kinase_affinity.tar.gz
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz
 ```
 **[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on 3DKDavis dataset. We offer dataset splits based on drug cold-start, kinase cold-start, or kinase-drug cold-start, ensuring that the model is tested on unseen kinases, unseen drugs, or both. To enable this option, set the --label argument to new_kinase, new_drug, or both_new. For example, to test on unseen kinases, run the following script:
