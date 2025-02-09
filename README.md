@@ -101,7 +101,7 @@ examples/virtual_screening_lrrk2.ipynb
 ```
 ### virtual screening on the unresolved crystal structure
 ```
-examples/virtual_screening_nuak2.ipynb
+examples/virtual_screening_crk12.ipynb
 ```
 
 ## Feature extraction, training, and testing pipeline
@@ -109,7 +109,7 @@ examples/virtual_screening_nuak2.ipynb
 ### 3DKDavis 
 **[1]** Download the new constructed 3DKDavis dataset and extract its content.
 ```
-wget 3dkdavis/3dkdavis.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/3dkdavis/3dkdavis.tar.gz
 tar zxvf 3dkdavis.tar.gz
 ```
 **[2]** Feature extraction, encompassing the biochemical and conformational characteristics of kinase inhibitors, evolutionary information and the intricate spatial structural features of binding pockets and kinase domains.To expedite feature generation for each complex, we recommend executing the following command, which directly generates complex-level features using our pre-generated feature files for all kinases, binding pockets, and kinase inhibitors:
@@ -127,12 +127,12 @@ python train_3dkdavis_selectivity.py
 ### 3DKKIBA
 **[1]** Download the new constructed low sequence similarity dataset of 3DKDavis and extract its content.
 ```
-wget 3dkkiba/30sm_kiba_gra_seq.tar.gz
-tar zxvf 30sm_kiba_gra_seq.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/3dkkiba/30sm_3dkkiba_gra_seq.tar.gz
+tar zxvf 30sm_3dkkiba_gra_seq.tar.gz
 ```
 If you wish to obtain features for the entire 3DKKIBA dataset (approximately 500GB), download the 3dkkiba.tar.gz and then execute the following command:
 ```
-wget 3dkkiba/3dkkiba.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/3dkkiba/3dkkiba.tar.tar.gz
 tar zxvf 3dkkiba.tar.gz
 python process_3dkkiba.py
 ```
@@ -148,7 +148,7 @@ python train_3dkkiba_selectivity.py
 ### PDBBind v2020 and CASF-2016
 **[1]** Download the PDBBindv2020 dataset and extract its content.
 ```
-wget pdbbind2020/pdbbind2020.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/pdbbind2020/pdbbind2020.tar.gz
 tar zxvf pdbbind2020.tar.gz
 ```
 **[2]** extracting the features of PDBBindv2020 and CASF-2016 datasets.
@@ -163,10 +163,11 @@ python train_pdbbind2020.py
 ### Fine-tuning and predicion on G2019S LRRK2 mutant
 **[1]** Download checkpoints(~300MB) and a dataset composed of a 1:1 ratio of inhibitors targeting both wild-type LRRK2 and LRRK2 G2019S  mutant kinases.
 ```
-wget pkls/finetune_lrrk2g2019s/MMCLKin_DTI_pearson_best.pkl
-wget mutant/lrrk2_g4.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/finetune_lrrk2g2019s.tar.gz
+tar zxvf finetune_lrrk2g2019s.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/mutant/lrrk2_g4.tar.gz
 tar zxvf lrrk2_g4.tar.gz
-wget mutant/lrrk2_mw.tar.gz
+https://fca_icdb.mpu.edu.mo/DataResource/database/mutant/lrrk2_mw.tar.gz
 tar zxvf lrrk2_mw.tar.gz
 ```
 **[2]** Fine-tune the MMCLKin model, and then perform prediction and validation on the inhibitors identified by our group. Execute the following command:
