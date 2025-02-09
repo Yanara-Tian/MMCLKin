@@ -164,11 +164,11 @@ python train_pdbbind2020.py
 **[1]** Download checkpoints(~300MB) and a dataset composed of a 1:1 ratio of inhibitors targeting both wild-type LRRK2 and LRRK2 G2019S  mutant kinases.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/finetune_lrrk2g2019s.tar.gz
-tar zxvf finetune_lrrk2g2019s.tar.gz
+tar zxvf finetune_lrrk2g2019s.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/mutant/lrrk2_g4.tar.gz
-tar zxvf lrrk2_g4.tar.gz
+tar zxvf lrrk2_g4.tar.gz -C ./mutant
 https://fca_icdb.mpu.edu.mo/DataResource/database/mutant/lrrk2_mw.tar.gz
-tar zxvf lrrk2_mw.tar.gz
+tar zxvf lrrk2_mw.tar.gz -C ./mutant
 ```
 **[2]** Fine-tune the MMCLKin model, and then perform prediction and validation on the inhibitors identified by our group. Execute the following command:
 ```
