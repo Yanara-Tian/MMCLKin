@@ -49,7 +49,7 @@ Running the above lines of `pip install` should be sufficient to install all  MM
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkdavis_new_kinase_affinity.tar.gz
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkdavis_new_kinase_affinity.tar.gz
-tar zxvf 3dkdavis_new_kinase_affinity.tar.gz
+tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./test_datasets
 ```
 **[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on 3DKDavis dataset. We offer dataset splits based on drug cold-start, kinase cold-start, or kinase-drug cold-start, ensuring that the model is tested on unseen kinases, unseen drugs, or both. To enable this option, set the --label argument to new_kinase, new_drug, or both_new. For example, to test on unseen kinases, run the following script:
 ```
@@ -61,7 +61,7 @@ python test_3dkdavis_affinity.py
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkkiba_new_kinase_affinity.tar.gz
 tar zxvf 3dkkiba_new_kinase_affinity.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkkiba_new_kinase_affinity.tar.gz
-tar zxvf 3dkkiba_new_kinase_affinity.tar.gz
+tar zxvf 3dkkiba_new_kinase_affinity.tar.gz -C ./test_datasets
 ```
 **[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on low sequence similarity dataset of 3DKDavis. For example, to evaluate on unseen kinases, run the following script:
 ```
