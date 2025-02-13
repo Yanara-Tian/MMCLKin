@@ -25,18 +25,9 @@ conda create -n mmclk python=3.8.15
 conda activate mmclk
 pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
 pip install --pre dgl-cu116 -f https://data.dgl.ai/wheels-test/repo.html
-pip install matplotlib
-pip install rdkit
-pip install scipy
-pip install Bio
-pip install transformers
+pip install matplotlib rdkit scipy Bio transformers sympy scikit-learn jupyterlab lifelines notebook
 pip install pyg_lib torch_geometric torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-1.12.0+cu116.html
 pip install networkx==2.7.1
-pip install sympy
-pip install scikit-learn
-pip install lifelines
-pip install jupyterlab
-pip install notebook
 ```
 Running the above lines of `pip install` should be sufficient to install all  MMCLKin's required packages (and their dependencies). Specific versions of the packages we tested were listed in `requirements.txt`.
 
@@ -175,4 +166,4 @@ tar zxvf lrrk2_mw.tar.gz -C ./mutant
 python finetune_lrrk2g2019s.py
 ```
 ## Contact
-Please submit GitHub issues or contact Yanan Tian(yanan.tian@mpu.edu.mo) for any questions related to the source code.
+Please submit GitHub issues or contact Huanxiang Liu(hxliu@mpu.edu.mo), Xiaojun Yao(xjyao@mpu.edu.mo), Yanan Tian(yanan.tian@mpu.edu.mo) for any questions related to the source code.
