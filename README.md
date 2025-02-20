@@ -19,7 +19,7 @@ cd MMCLKin
 export PYTHONPATH=$PWD:$PYTHONPATH
 ```
 ## Python Dependencies
-This package is tested with Python 3.8.15 and CUDA 11.0 on Ubuntu 20.04. Run the following to create a conda environment and install the required Python packages (modify `torch+cu116` according to your CUDA version). 
+This package is tested with Python 3.8.15 and CUDA 11.0 on Ubuntu 20.04. Run the following to create a conda environment and install the required Python packages (modify `torch+cu116` and 'dgl-cu116' according to your CUDA version). 
 ```bash
 conda create -n mmclk python=3.8.15
 conda activate mmclk
