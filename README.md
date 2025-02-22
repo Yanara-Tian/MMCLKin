@@ -44,7 +44,7 @@ tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkdavis_new_kinase_affinity.tar.gz
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./test_datasets
 ```
-**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on 3DKDavis dataset. We offer dataset splits based on drug cold-start, kinase cold-start, or kinase-drug cold-start, ensuring that the model is tested on unseen kinases, unseen drugs, or both. To enable this option, set the --label argument to new_kinase, new_drug, or both_new. For example, to test on unseen kinases, run the following script(~3 min):
+**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on 3DKDavis dataset. We offer dataset splits based on drug cold-start, kinase cold-start, or kinase-drug cold-start, ensuring that the model is tested on unseen kinases, unseen drugs, or both. To enable this option, set the --label argument to new_kinase, new_drug, or both_new. For example, to test on unseen kinases, run the following script(~3 mins):
 ```
 python test_3dkdavis_affinity.py
 ```
@@ -60,9 +60,13 @@ tar zxvf 3dkkiba_new_kinase_affinity.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkkiba_new_kinase_affinity.tar.gz
 tar zxvf 3dkkiba_new_kinase_affinity.tar.gz -C ./test_datasets
 ```
-**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on low sequence similarity dataset of 3DKDavis. For example, to evaluate on unseen kinases, run the following script(~3 min):
+**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on low sequence similarity dataset of 3DKDavis. For example, to evaluate on unseen kinases, run the following script(~3 mins):
 ```
 python test_3dkkiba_affinity.py
+```
+```
+ MAE	   CI	    MSE	    PCC
+0.374    0.733    0.300    0.658  
 ```
 
 ### The selectivity of kinase inhibitors on human kinome
