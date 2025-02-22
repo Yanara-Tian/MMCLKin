@@ -60,7 +60,7 @@ tar zxvf 3dkkiba_new_kinase_affinity.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkkiba_new_kinase_affinity.tar.gz
 tar zxvf 3dkkiba_new_kinase_affinity.tar.gz -C ./test_datasets
 ```
-**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on low sequence similarity dataset of 3DKDavis. For example, to evaluate on unseen kinases, run the following script:
+**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on low sequence similarity dataset of 3DKDavis. For example, to evaluate on unseen kinases, run the following script(~3 min):
 ```
 python test_3dkkiba_affinity.py
 ```
