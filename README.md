@@ -96,10 +96,12 @@ tar zxvf 3dkkiba_new_drug_selectivity.tar.gz -C ./test_datasets
 python test_3dkkiba_selectivity.py
 ```
 ### virtual screening on the experimental structure
+To provide a more intuitive demonstration, we have also presented the virtual screening process and results of MMCLKin on the LRRK2 kinase target, which is based on a known experimental structure, using a Jupyter Notebook file.
 ```
 examples/virtual_screening_lrrk2.ipynb
 ```
 ### virtual screening on the unresolved crystal structure
+Additionally, we have also presented the virtual screening process and results of MMCLKin on the CRK12 kinase target, for which the crystal structure remains unknown, using a Jupyter Notebook file.
 ```
 examples/virtual_screening_crk12.ipynb
 ```
