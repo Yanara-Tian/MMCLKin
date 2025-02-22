@@ -79,7 +79,7 @@ tar zxvf 3dkdavis_selectivity.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkdavis_new_drug_selectivity.tar.gz
 tar zxvf 3dkdavis_new_drug_selectivity.tar.gz -C ./test_datasets
 ```
-**[2]** To ensure comprehensive learning of human kinases, the predictive performance for kinase inhibitor selectivity of MMCLKin was evalueated under the drug cold-start splitting strategy.
+**[2]** To ensure comprehensive learning of human kinases, the predictive performance for kinase inhibitor selectivity of MMCLKin was evalueated under the drug cold-start splitting strategy (~1 h).
 ```
 python test_3dkdavis_selectivity.py
 ```
