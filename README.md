@@ -37,19 +37,23 @@ Running the above lines of `pip install` should be sufficient to install all  MM
 ### Kinase-inhibitor binding affinity 
 
 #### Predictive performance of kinase-inhibitor binding affinity on the 3DKDavis dataset
-**[1]** Download checkpoints(~298MB) and dataset(~15GB) to main directory, and then extract them.
+**[1]** Download checkpoints(~298MB) and dataset(~15GB), and transfer them to main directory.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkdavis_new_kinase_affinity.tar.gz
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkdavis_new_kinase_affinity.tar.gz
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./test_datasets
 ```
-**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on 3DKDavis dataset. We offer dataset splits based on drug cold-start, kinase cold-start, or kinase-drug cold-start, ensuring that the model is tested on unseen kinases, unseen drugs, or both. To enable this option, set the --label argument to new_kinase, new_drug, or both_new. For example, to test on unseen kinases, run the following script:
+**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on 3DKDavis dataset. We offer dataset splits based on drug cold-start, kinase cold-start, or kinase-drug cold-start, ensuring that the model is tested on unseen kinases, unseen drugs, or both. To enable this option, set the --label argument to new_kinase, new_drug, or both_new. For example, to test on unseen kinases, run the following script(~3 min):
 ```
 python test_3dkdavis_affinity.py
 ```
+```
+MAE	    CI	    MSE	    PCC
+0.295  0.853  0.284  0.741  
+```
 #### Predictive performance of kinase-inhibitor binding affinity on the low sequence similarity dataset of 3DKKIBA
-**[1]** Download checkpoints(~300MB) and dataset(~6.8GB)to main directory, and then extract the dataset.
+**[1]** Download checkpoints(~300MB) and dataset(~6.8GB), and transfer them to main directory.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkkiba_new_kinase_affinity.tar.gz
 tar zxvf 3dkkiba_new_kinase_affinity.tar.gz -C ./pkls
@@ -64,7 +68,7 @@ python test_3dkkiba_affinity.py
 ### The selectivity of kinase inhibitors on human kinome
 
 #### Predictive performance of the selectivity of kinase inhibitors on the 3DKDavis dataset
-**[1]** Download checkpoints(~300MB) and dataset(~15GB) to main directory, and then extract the dataset.
+**[1]** Download checkpoints(~300MB) and dataset(~15GB), and transfer them to main directory.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkdavis_selectivity.tar.gz
 tar zxvf 3dkdavis_selectivity.tar.gz -C ./pkls
@@ -76,7 +80,7 @@ tar zxvf 3dkdavis_new_drug_selectivity.tar.gz -C ./test_datasets
 python test_3dkdavis_selectivity.py
 ```
 #### Predictive performance of the selectivity of kinase inhibitor on the low sequence similarity dataset of 3DKKIBA
-**[1]** Download checkpoints(~300MB) and dataset(~6.1GB) to main directory, and then extract the dataset.
+**[1]** Download checkpoints(~300MB) and dataset(~6.1GB), and transfer them to main directory.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkkiba_selectivity.tar.gz
 tar zxvf 3dkkiba_selectivity.tar.gz -C ./pkls
