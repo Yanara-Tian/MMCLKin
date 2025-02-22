@@ -32,6 +32,19 @@ pip install networkx==2.7.1
 ```
 Running the above lines of `pip install` should be sufficient to install all  MMCLKin's required packages (and their dependencies). Specific versions of the packages we tested were listed in `requirements.txt`.
 
+## Demo on a small samples from 3DKDavis dataset
+**[1]** Download checkpoints(~298MB) and dataset(~1.2GB)(~6mins) using the links, and transfer them to main directory.
+```
+https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkdavis_new_kinase_affinity.tar.gz
+tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
+https://1drv.ms/u/s!ApQsEObuotQkbsFbZlJ_l8RXMGg?e=fhUyvv
+tar zxvf demo_3dkd_affinity.tar.gz -C ./test_datasets
+```
+**[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on a small samples from 3DKDavis dataset under the kinase cold-start splitting strategy, run the following script(~3 mins):
+```
+python test_3dkdavis_affinity_demo.py
+```
+
 ## Reproduce Results
 
 ### Kinase-inhibitor binding affinity 
@@ -79,7 +92,7 @@ tar zxvf 3dkdavis_selectivity.tar.gz -C ./pkls
 https://fca_icdb.mpu.edu.mo/DataResource/database/test_datasets/3dkdavis_new_drug_selectivity.tar.gz
 tar zxvf 3dkdavis_new_drug_selectivity.tar.gz -C ./test_datasets
 ```
-**[2]** To ensure comprehensive learning of human kinases, the predictive performance for kinase inhibitor selectivity of MMCLKin was evalueated under the drug cold-start splitting strategy (~1 h).
+**[2]** To ensure comprehensive learning of human kinases, the predictive performance for kinase inhibitor selectivity of MMCLKin was evalueated under the drug cold-start splitting strategy (~1.5 h).
 ```
 python test_3dkdavis_selectivity.py
 ```
