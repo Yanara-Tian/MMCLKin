@@ -367,7 +367,7 @@ def main(params):
     del valid_dataset
     
     model = MMCLKin(args.lstm_dropout, args.alpha, args.num_heads, hidden_dim=params['hidden_dim'], dropout_rate=params['dropout_rate'], n_head=8, smile_vocab=63, local_rank=device)  
-    path = './pkls/3dkdavis_new_kinase/MMCLKin_DTI_pearson_best.pkl'
+    path = './pkls/3dkdavis_new_kinase_affinity/MMCLKin_DTI_pearson_best.pkl'
     model.load_state_dict(torch.load(path)['model'], strict=True)
     model.to(device)
 
