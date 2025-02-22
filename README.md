@@ -83,6 +83,11 @@ tar zxvf 3dkdavis_new_drug_selectivity.tar.gz -C ./test_datasets
 ```
 python test_3dkdavis_selectivity.py
 ```
+```
+ SE	   MSE	    PCC	   
+0.113    0.620    0.907   
+```
+
 #### Predictive performance of the selectivity of kinase inhibitor on the low sequence similarity dataset of 3DKKIBA
 **[1]** Download checkpoints(~300MB) and dataset(~6.1GB), and transfer them to main directory.
 ```
@@ -94,6 +99,10 @@ tar zxvf 3dkkiba_new_drug_selectivity.tar.gz -C ./test_datasets
 **[2]** Test the predictive performance for kinase inhibitor selectivity of MMCLKin on the low sequence similarity dataset of 3DKKIBA(~25 mins).
 ```
 python test_3dkkiba_selectivity.py 
+```
+```
+ SE	   MSE	    PCC	   
+0.090    0.443    0.483    
 ```
 
 ### virtual screening on the experimental structure
