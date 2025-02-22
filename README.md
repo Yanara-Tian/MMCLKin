@@ -50,7 +50,7 @@ python test_3dkdavis_affinity.py
 ```
 ```
 MAE	    CI	    MSE	    PCC
-0.295  0.853  0.284  0.741  
+0.295    0.853    0.284    0.741  
 ```
 #### Predictive performance of kinase-inhibitor binding affinity on the low sequence similarity dataset of 3DKKIBA
 **[1]** Download checkpoints(~300MB) and dataset(~6.8GB), and transfer them to main directory.
