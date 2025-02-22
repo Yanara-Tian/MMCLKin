@@ -162,7 +162,7 @@ python process_pdbbind2020.py
 python train_pdbbind2020.py
 ```
 
-### Fine-tuning and predicion on G2019S LRRK2 mutant
+### Fine-tuning and predicion on the LRRK2 G2019S mutant
 **[1]** Download checkpoints(~900MB) and a dataset (~5GB) composed of a 1:1 ratio of inhibitors targeting both wild-type LRRK2 and LRRK2 G2019S  mutant kinases.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/finetune_lrrk2g2019s.tar.gz
