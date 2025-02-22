@@ -38,7 +38,7 @@ Running the above lines of `pip install` should be sufficient to install all  MM
 https://1drv.ms/u/s!ApQsEObuotQkbxMGi7ezUTOd3CI?e=Qa1nQm
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
 https://1drv.ms/u/s!ApQsEObuotQkbsFbZlJ_l8RXMGg?e=fhUyvv
-tar -xJvf demo_3dkd_affinity.tar.xz -C ./test_datasets
+tar -xvf demo_3dkd_affinity.tar.xz -C ./test_datasets
 ```
 **[2]** Test the prediction performance of MMCLKin for kinase-inhibitor binding affinity on a small samples from 3DKDavis dataset under the kinase cold-start splitting strategy, run the following script(~3 mins):
 ```
