@@ -33,7 +33,7 @@ pip install networkx==2.7.1
 Running the above lines of `pip install` should be sufficient to install all  MMCLKin's required packages (and their dependencies). Specific versions of the packages we tested were listed in `requirements.txt`.
 
 ## Demo on a small samples from 3DKDavis dataset
-**[1]** Download checkpoints(~275MB)(~10mins) and dataset(~1.2GB)(~6mins) using the links, and transfer them to main directory.
+**[1]** Download checkpoints(~275MB)(~2mins) and dataset(~1.2GB)(~6mins) using the links, and transfer them to main directory.
 ```
 https://onedrive.live.com/?cid=24D4A2EEE6102C94&id=24D4A2EEE6102C94%21111&parId=root&o=OneUp
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
