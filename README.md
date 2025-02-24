@@ -45,7 +45,7 @@ tar -xvf demo_3dkd_affinity.tar.xz -C ./test_datasets
 python test_3dkdavis_affinity_demo.py
 ```
 
-If you would like to replicate the results published in this article, please follow the steps below to run the scripts.
+If you would like to replicate the results published in this article, please run the scripts following the steps below.
 
 ## Reproduce Results
 
