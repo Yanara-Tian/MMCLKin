@@ -33,9 +33,9 @@ pip install networkx==2.7.1
 Running the above lines of `pip install` should be sufficient to install all  MMCLKin's required packages (and their dependencies). Specific versions of the packages we tested were listed in `requirements.txt`.
 
 ## Demo on a small samples from 3DKDavis dataset
-**[1]** Download checkpoints(~298MB)(~10mins) and dataset(~1.2GB)(~6mins) using the links, and transfer them to main directory.
+**[1]** Download checkpoints(~275MB)(~10mins) and dataset(~1.2GB)(~6mins) using the links, and transfer them to main directory.
 ```
-https://1drv.ms/u/s!ApQsEObuotQkbxMGi7ezUTOd3CI?e=Qa1nQm
+https://onedrive.live.com/?cid=24D4A2EEE6102C94&id=24D4A2EEE6102C94%21111&parId=root&o=OneUp
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
 https://1drv.ms/u/s!ApQsEObuotQkbsFbZlJ_l8RXMGg?e=fhUyvv
 tar -xvf demo_3dkd_affinity.tar.xz -C ./test_datasets
@@ -52,7 +52,7 @@ If you would like to replicate the results published in this article, please fol
 ### Kinase-inhibitor binding affinity 
 
 #### Predictive performance of kinase-inhibitor binding affinity on the 3DKDavis dataset
-**[1]** Download checkpoints(~551MB) and dataset(~15GB) using the links, and transfer them to main directory.
+**[1]** Download checkpoints(~275MB) and dataset(~15GB) using the links, and transfer them to main directory.
 ```
 https://fca_icdb.mpu.edu.mo/DataResource/database/pkls/3dkdavis_new_kinase_affinity.tar.gz
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
