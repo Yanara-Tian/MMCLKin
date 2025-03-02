@@ -35,7 +35,7 @@ Running the above lines of `pip install` should be sufficient to install all  MM
 ## Demo on a small samples from 3DKDavis dataset
 **[1]** Download checkpoints(~275MB)(~2mins) and dataset(~1.2GB)(~6mins) using the links, and transfer them to main directory.
 ```
-https://onedrive.live.com/?cid=24D4A2EEE6102C94&id=24D4A2EEE6102C94%21111&parId=root&o=OneUp
+https://1drv.ms/u/s!ApQsEObuotQkbxMGi7ezUTOd3CI?e=UYMaM3
 tar zxvf 3dkdavis_new_kinase_affinity.tar.gz -C ./pkls
 https://1drv.ms/u/s!ApQsEObuotQkbsFbZlJ_l8RXMGg?e=fhUyvv
 tar -xvf demo_3dkd_affinity.tar.xz -C ./test_datasets
