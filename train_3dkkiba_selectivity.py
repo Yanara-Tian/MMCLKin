@@ -68,12 +68,12 @@ criterion = get_loss(args.loss)
 def comput_sds(real_results, pred_results):
     n = 0
     for i in real_results:
-        if i > 6:
+        if i > 12:
             n = n + 1
     real_sds = n/len(real_results)
     m = 0
     for d in pred_results:
-        if d >= 6:
+        if d >= 12:
             m = m + 1
     pred_sds = m/len(pred_results)
     
